@@ -54,6 +54,69 @@ function loadAccessibilityPreferences() {
 // Language Modal
 // ============================================
 
+const translations = {
+  'en': {
+    'nav-home': 'Home',
+    'nav-health': 'Healthcare',
+    'nav-mind': 'Mental Health',
+    'nav-info': 'Info Hub',
+    'nav-community': 'Community',
+    'hero-title': 'PANACEA',
+    'hero-subtitle': 'Stay informed. Stay connected.',
+    'welcome-title': 'Welcome to PANACEA',
+    'welcome-desc': 'Your complete pandemic response companion. Access healthcare, mental support, verified information, and connect with your community.',
+    'alert-text': 'Latest Update: New vaccination centers opened in your area.',
+    'card-health-title': 'Healthcare',
+    'card-health-desc': 'Find hospitals, telemedicine, symptom checker & vaccination',
+    'card-mind-title': 'Mental Health',
+    'card-mind-desc': 'Meditation, mood tracking & professional support',
+    'card-info-title': 'Information Hub',
+    'card-info-desc': 'Real-time updates, myth busters & verified news',
+    'card-comm-title': 'Community',
+    'card-comm-desc': 'Help exchange, volunteer & neighborhood support'
+  },
+  'hi': {
+    'nav-home': 'होम',
+    'nav-health': 'स्वास्थ्य',
+    'nav-mind': 'मानसिक स्वास्थ्य',
+    'nav-info': 'जानकारी',
+    'nav-community': 'समुदाय',
+    'hero-title': 'रामबाण',
+    'hero-subtitle': 'सूचित रहें। जुड़े रहें।',
+    'welcome-title': 'PANACEA में आपका स्वागत है',
+    'welcome-desc': 'आपका संपूर्ण महामारी प्रतिक्रिया साथी। स्वास्थ्य सेवा, मानसिक सहायता, सत्यापित जानकारी प्राप्त करें और अपने समुदाय से जुड़ें।',
+    'alert-text': 'नया अपडेट: आपके क्षेत्र में नए टीकाकरण केंद्र खोले गए।',
+    'card-health-title': 'स्वास्थ्य सेवा',
+    'card-health-desc': 'अस्पताल, टेलीमेडिसिन, लक्षण चेकर और टीकाकरण खोजें',
+    'card-mind-title': 'मानसिक स्वास्थ्य',
+    'card-mind-desc': 'ध्यान, मूड ट्रैकिंग और पेशेवर सहायता',
+    'card-info-title': 'सूचना केंद्र',
+    'card-info-desc': 'वास्तविक समय अपडेट, मिथक बस्टर और सत्यापित समाचार',
+    'card-comm-title': 'समुदाय',
+    'card-comm-desc': 'मदद विनिमय, स्वयंसेवक और पड़ोस का समर्थन'
+  },
+  'ta': {
+    'nav-home': 'முகப்பு',
+    'nav-health': 'சுகாதாரம்',
+    'nav-mind': 'மன நலம்',
+    'nav-info': 'தகவல்',
+    'nav-community': 'சமூகம்',
+    'hero-title': 'பானேசியா',
+    'hero-subtitle': 'தகவலறிந்து இருங்கள். இணைந்திருங்கள்.',
+    'welcome-title': 'PANACEA வரவேற்கிறது',
+    'welcome-desc': 'உங்கள் முழுமையான தொற்றுநோய் பதிலளிப்பு துணை. சுகாதாரம், மன ஆதரவு, சரிபார்க்கப்பட்ட தகவல்களை அணுகவும் மற்றும் உங்கள் சமூகத்துடன் இணையவும்.',
+    'alert-text': 'சமீபத்திய புதுப்பிப்பு: உங்கள் பகுதியில் புதிய தடுப்பூசி மையங்கள் திறக்கப்பட்டுள்ளன.',
+    'card-health-title': 'சுகாதாரம்',
+    'card-health-desc': 'மருத்துவமனைகள், டெலிமெடிசின், அறிகுறிகள் சரிபார்ப்பு மற்றும் தடுப்பூசியைக் கண்டறியவும்',
+    'card-mind-title': 'மன நலம்',
+    'card-mind-desc': 'தியானம், மனநிலை கண்காணிப்பு மற்றும் தொழில்முறை ஆதரவு',
+    'card-info-title': 'தகவல் மையம்',
+    'card-info-desc': 'நிகழ்நேர புதுப்பிப்புகள், கட்டுக்கதை உடைப்பவர்கள் மற்றும் சரிபார்க்கப்பட்ட செய்திகள்',
+    'card-comm-title': 'சமூகம்',
+    'card-comm-desc': 'உதவி பரிமாற்றம், தன்னார்வலர் மற்றும் அண்டை வீட்டு ஆதரவு'
+  }
+};
+
 function toggleLanguageModal() {
   const modal = document.getElementById('languageModal');
   if (modal) {
@@ -64,9 +127,62 @@ function toggleLanguageModal() {
 function saveLanguage() {
   const selected = document.querySelector('input[name="language"]:checked');
   if (selected) {
-    localStorage.setItem('language', selected.value);
-    alert('Language preference saved! (Demo - full translation not implemented)');
+    const lang = selected.value;
+    localStorage.setItem('language', lang);
+    applyLanguage(lang);
     toggleLanguageModal();
+  }
+}
+
+function applyLanguage(lang) {
+  // Default to English if translation missing
+  const text = translations[lang] || translations['en'];
+  
+  // Update elements if they exist (Home Page Implementation)
+  if (document.querySelector('.header-nav-link')) {
+    const navs = document.querySelectorAll('.header-nav-link');
+    if (navs[0]) navs[0].textContent = text['nav-home'];
+    if (navs[1]) navs[1].textContent = text['nav-health'];
+    if (navs[2]) navs[2].textContent = text['nav-mind'];
+    if (navs[3]) navs[3].textContent = text['nav-info'];
+    if (navs[4]) navs[4].textContent = text['nav-community'];
+  }
+  
+  const heroTitle = document.querySelector('.logo-text h1');
+  if (heroTitle) heroTitle.textContent = text['hero-title'];
+  
+  const heroSub = document.querySelector('.logo-text p');
+  if (heroSub) heroSub.textContent = text['hero-subtitle'];
+  
+  const welcomeTitle = document.querySelector('.welcome-section h2');
+  if (welcomeTitle) welcomeTitle.textContent = text['welcome-title'];
+  
+  const welcomeDesc = document.querySelector('.welcome-section p');
+  if (welcomeDesc) welcomeDesc.textContent = text['welcome-desc'];
+  
+  const alertText = document.querySelector('#alertBanner div');
+  if (alertText) {
+    // Keep the link
+    const link = alertText.querySelector('a');
+    alertText.childNodes[0].textContent = '📢 '; // Icon
+    // Need to handle mixed content carefully or just update text node
+    // Simple approach for hackathon:
+    alertText.innerHTML = `<strong>${lang === 'en' ? 'Latest Update:' : 'Update:'}</strong> ${text['alert-text']} <a href="healthcare.html#vaccination">${link ? link.textContent : '→'}</a>`;
+  }
+  
+  const cards = document.querySelectorAll('.feature-card');
+  if (cards.length >= 4) {
+    cards[0].querySelector('h3').textContent = text['card-health-title'];
+    cards[0].querySelector('p').textContent = text['card-health-desc'];
+    
+    cards[1].querySelector('h3').textContent = text['card-mind-title'];
+    cards[1].querySelector('p').textContent = text['card-mind-desc'];
+    
+    cards[2].querySelector('h3').textContent = text['card-info-title'];
+    cards[2].querySelector('p').textContent = text['card-info-desc'];
+    
+    cards[3].querySelector('h3').textContent = text['card-comm-title'];
+    cards[3].querySelector('p').textContent = text['card-comm-desc'];
   }
 }
 
@@ -441,6 +557,15 @@ function refreshStats() {
 document.addEventListener('DOMContentLoaded', function() {
   // Load accessibility preferences
   loadAccessibilityPreferences();
+  
+  // Load saved language
+  const savedLang = localStorage.getItem('language');
+  if (savedLang) {
+    applyLanguage(savedLang);
+    // Update radio button
+    const radio = document.querySelector(`input[name="language"][value="${savedLang}"]`);
+    if (radio) radio.checked = true;
+  }
   
   // Load today's mood
   loadTodaysMood();
