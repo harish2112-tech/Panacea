@@ -73,7 +73,23 @@ const translations = {
     'card-info-title': 'Information Hub',
     'card-info-desc': 'Real-time updates, myth busters & verified news',
     'card-comm-title': 'Community',
-    'card-comm-desc': 'Help exchange, volunteer & neighborhood support'
+    'card-comm-desc': 'Help exchange, volunteer & neighborhood support',
+    // Healthcare Page
+    'sub-health': 'Healthcare Resources',
+    'title-health': '🏥 Healthcare Resources',
+    'desc-health': 'Access healthcare services, check symptoms, and manage your health during the pandemic.',
+    // Mental Health Page
+    'sub-mind': 'Mental Health Support',
+    'title-mind': '🧠 Mental Health Support',
+    'desc-mind': 'Take care of your mind. Access guided meditations, track your mood, and find professional support.',
+    // Info Hub Page
+    'sub-info': 'Information Hub',
+    'title-info': '📊 Information Hub',
+    'desc-info': 'Stay updated with verified statistics, local alerts, and myth-busting facts.',
+    // Community Page
+    'sub-comm': 'Community Connection',
+    'title-comm': '🤝 Community Connection',
+    'desc-comm': 'Connect with neighbors, offer help, and support each other through tough times.'
   },
   'hi': {
     'nav-home': 'होम',
@@ -93,7 +109,23 @@ const translations = {
     'card-info-title': 'सूचना केंद्र',
     'card-info-desc': 'वास्तविक समय अपडेट, मिथक बस्टर और सत्यापित समाचार',
     'card-comm-title': 'समुदाय',
-    'card-comm-desc': 'मदद विनिमय, स्वयंसेवक और पड़ोस का समर्थन'
+    'card-comm-desc': 'मदद विनिमय, स्वयंसेवक और पड़ोस का समर्थन',
+    // Healthcare Page
+    'sub-health': 'स्वास्थ्य संसाधन',
+    'title-health': '🏥 स्वास्थ्य संसाधन',
+    'desc-health': 'स्वास्थ्य सेवाओं तक पहुंचें, लक्षणों की जांच करें और महामारी के दौरान अपने स्वास्थ्य का प्रबंधन करें।',
+    // Mental Health Page
+    'sub-mind': 'मानसिक स्वास्थ्य सहायता',
+    'title-mind': '🧠 मानसिक स्वास्थ्य सहायता',
+    'desc-mind': 'अपने दिमाग का ख्याल रखें। निर्देशित ध्यान तक पहुंचें, अपने मूड को ट्रैक करें और पेशेवर सहायता प्राप्त करें।',
+    // Info Hub Page
+    'sub-info': 'सूचना केंद्र',
+    'title-info': '📊 सूचना केंद्र',
+    'desc-info': 'सत्यापित आंकड़ों, स्थानीय अलर्ट और मिथक तोड़ने वाले तथ्यों के साथ अपडेट रहें।',
+    // Community Page
+    'sub-comm': 'सामुदायिक संबंध',
+    'title-comm': '🤝 सामुदायिक संबंध',
+    'desc-comm': 'पड़ोसियों से जुड़ें, मदद की पेशकश करें और कठिन समय में एक-दूसरे का समर्थन करें।'
   },
   'ta': {
     'nav-home': 'முகப்பு',
@@ -113,7 +145,23 @@ const translations = {
     'card-info-title': 'தகவல் மையம்',
     'card-info-desc': 'நிகழ்நேர புதுப்பிப்புகள், கட்டுக்கதை உடைப்பவர்கள் மற்றும் சரிபார்க்கப்பட்ட செய்திகள்',
     'card-comm-title': 'சமூகம்',
-    'card-comm-desc': 'உதவி பரிமாற்றம், தன்னார்வலர் மற்றும் அண்டை வீட்டு ஆதரவு'
+    'card-comm-desc': 'உதவி பரிமாற்றம், தன்னார்வலர் மற்றும் அண்டை வீட்டு ஆதரவு',
+    // Healthcare Page
+    'sub-health': 'சுகாதார வளங்கள்',
+    'title-health': '🏥 சுகாதார வளங்கள்',
+    'desc-health': 'சுகாதார சேவைகளை அணுகவும், அறிகுறிகளை சரிபார்க்கவும் மற்றும் தொற்றுநோயின் போது உங்கள் ஆரோக்கியத்தை நிர்வகிக்கவும்.',
+    // Mental Health Page
+    'sub-mind': 'மனநல ஆதரவு',
+    'title-mind': '🧠 மனநல ஆதரவு',
+    'desc-mind': 'உங்கள் மனதை கவனித்துக் கொள்ளுங்கள். வழிகாட்டப்பட்ட தியானங்களை அணுகவும், உங்கள் மனநிலையைக் கண்காணிக்கவும் மற்றும் தொழில்முறை ஆதரவைக் கண்டறியவும்.',
+    // Info Hub Page
+    'sub-info': 'தகவல் மையம்',
+    'title-info': '📊 தகவல் மையம்',
+    'desc-info': 'சரிபார்க்கப்பட்ட புள்ளிவிவரங்கள், உள்ளூர் விழிப்பூட்டல்கள் மற்றும் கட்டுக்கதை உடைக்கும் உண்மைகளுடன் புதுப்பித்த நிலையில் இருங்கள்.',
+    // Community Page
+    'sub-comm': 'சமூக இணைப்பு',
+    'title-comm': '🤝 சமூக இணைப்பு',
+    'desc-comm': 'அண்டை வீட்டாருடன் இணையுங்கள், உதவி வழங்குங்கள் மற்றும் கடினமான காலங்களில் ஒருவருக்கொருவர் ஆதரவளிக்கவும்.'
   }
 };
 
@@ -138,7 +186,7 @@ function applyLanguage(lang) {
   // Default to English if translation missing
   const text = translations[lang] || translations['en'];
   
-  // Update elements if they exist (Home Page Implementation)
+  // 1. Update Navigation (All Pages)
   if (document.querySelector('.header-nav-link')) {
     const navs = document.querySelectorAll('.header-nav-link');
     if (navs[0]) navs[0].textContent = text['nav-home'];
@@ -148,41 +196,63 @@ function applyLanguage(lang) {
     if (navs[4]) navs[4].textContent = text['nav-community'];
   }
   
+  // 2. Update Header Title (All Pages)
   const heroTitle = document.querySelector('.logo-text h1');
   if (heroTitle) heroTitle.textContent = text['hero-title'];
-  
-  const heroSub = document.querySelector('.logo-text p');
-  if (heroSub) heroSub.textContent = text['hero-subtitle'];
-  
-  const welcomeTitle = document.querySelector('.welcome-section h2');
-  if (welcomeTitle) welcomeTitle.textContent = text['welcome-title'];
-  
-  const welcomeDesc = document.querySelector('.welcome-section p');
-  if (welcomeDesc) welcomeDesc.textContent = text['welcome-desc'];
-  
-  const alertText = document.querySelector('#alertBanner div');
-  if (alertText) {
-    // Keep the link
-    const link = alertText.querySelector('a');
-    alertText.childNodes[0].textContent = '📢 '; // Icon
-    // Need to handle mixed content carefully or just update text node
-    // Simple approach for hackathon:
-    alertText.innerHTML = `<strong>${lang === 'en' ? 'Latest Update:' : 'Update:'}</strong> ${text['alert-text']} <a href="healthcare.html#vaccination">${link ? link.textContent : '→'}</a>`;
-  }
-  
-  const cards = document.querySelectorAll('.feature-card');
-  if (cards.length >= 4) {
-    cards[0].querySelector('h3').textContent = text['card-health-title'];
-    cards[0].querySelector('p').textContent = text['card-health-desc'];
+
+  // Determine current page for specific content
+  const path = window.location.pathname;
+  const pageSub = document.querySelector('.logo-text p');
+  const mainTitle = document.querySelector('.page-title h2');
+  const mainDesc = document.querySelector('.page-title p');
+
+  if (path.includes('healthcare.html')) {
+    if (pageSub) pageSub.textContent = text['sub-health'];
+    if (mainTitle) mainTitle.textContent = text['title-health'];
+    if (mainDesc) mainDesc.textContent = text['desc-health'];
+  } else if (path.includes('mental-health.html')) {
+    if (pageSub) pageSub.textContent = text['sub-mind'];
+    if (mainTitle) mainTitle.textContent = text['title-mind'];
+    if (mainDesc) mainDesc.textContent = text['desc-mind'];
+  } else if (path.includes('info-hub.html')) {
+    if (pageSub) pageSub.textContent = text['sub-info'];
+    if (mainTitle) mainTitle.textContent = text['title-info'];
+    if (mainDesc) mainDesc.textContent = text['desc-info'];
+  } else if (path.includes('community.html')) {
+    if (pageSub) pageSub.textContent = text['sub-comm'];
+    if (mainTitle) mainTitle.textContent = text['title-comm'];
+    if (mainDesc) mainDesc.textContent = text['desc-comm'];
+  } else {
+    // Default / Index Page
+    if (pageSub) pageSub.textContent = text['hero-subtitle'];
     
-    cards[1].querySelector('h3').textContent = text['card-mind-title'];
-    cards[1].querySelector('p').textContent = text['card-mind-desc'];
+    // Index specific content
+    const welcomeTitle = document.querySelector('.welcome-section h2');
+    if (welcomeTitle) welcomeTitle.textContent = text['welcome-title'];
     
-    cards[2].querySelector('h3').textContent = text['card-info-title'];
-    cards[2].querySelector('p').textContent = text['card-info-desc'];
+    const welcomeDesc = document.querySelector('.welcome-section p');
+    if (welcomeDesc) welcomeDesc.textContent = text['welcome-desc'];
     
-    cards[3].querySelector('h3').textContent = text['card-comm-title'];
-    cards[3].querySelector('p').textContent = text['card-comm-desc'];
+    const alertText = document.querySelector('#alertBanner div');
+    if (alertText) {
+      const link = alertText.querySelector('a');
+      alertText.innerHTML = `<strong>${lang === 'en' ? 'Latest Update:' : 'Update (अपडेट):'}</strong> ${text['alert-text']} <a href="healthcare.html#vaccination">${link ? link.textContent : '→'}</a>`;
+    }
+    
+    const cards = document.querySelectorAll('.feature-card');
+    if (cards.length >= 4) {
+      cards[0].querySelector('h3').textContent = text['card-health-title'];
+      cards[0].querySelector('p').textContent = text['card-health-desc'];
+      
+      cards[1].querySelector('h3').textContent = text['card-mind-title'];
+      cards[1].querySelector('p').textContent = text['card-mind-desc'];
+      
+      cards[2].querySelector('h3').textContent = text['card-info-title'];
+      cards[2].querySelector('p').textContent = text['card-info-desc'];
+      
+      cards[3].querySelector('h3').textContent = text['card-comm-title'];
+      cards[3].querySelector('p').textContent = text['card-comm-desc'];
+    }
   }
 }
 
