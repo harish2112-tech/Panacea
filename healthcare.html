@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="PANACEA Healthcare - Find hospitals, telemedicine, symptom checker, vaccination scheduling and health tracking.">
+    <title>Healthcare Resources - PANACEA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+</head>
+
+<body>
+    <div class="page-wrapper" id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-content">
+                <div class="logo">
+                    <div class="logo-icon">🛡️</div>
+                    <div class="logo-text">
+                        <h1>PANACEA</h1>
+                        <p>Healthcare Resources</p>
+                    </div>
+                </div>
+
+                <nav class="header-nav">
+                    <a href="index.html" class="header-nav-link">Home</a>
+                    <a href="healthcare.html" class="header-nav-link active">Healthcare</a>
+                    <a href="mental-health.html" class="header-nav-link">Mental Health</a>
+                    <a href="info-hub.html" class="header-nav-link">Info Hub</a>
+                    <a href="community.html" class="header-nav-link">Community</a>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="header-btn" onclick="toggleFontSize()"><span>A+</span></button>
+                    <button class="header-btn" onclick="toggleHighContrast()"><span>👁️</span></button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <a href="index.html" class="back-link">← Back to Home</a>
+
+                <div class="page-title">
+                    <h2>🏥 Healthcare Resources</h2>
+                    <p>Access healthcare services, check symptoms, and manage your health during the pandemic.</p>
+                </div>
+
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchTab('finder')">📍 Find Care</button>
+                    <button class="tab-btn" onclick="switchTab('symptoms')">🩺 Symptom Checker</button>
+                    <button class="tab-btn" onclick="switchTab('vaccination')">💉 Vaccination</button>
+                    <button class="tab-btn" onclick="switchTab('tracker')">📋 Health Log</button>
+                </div>
+
+                <!-- Tab: Healthcare Finder -->
+                <div class="tab-content active" id="tab-finder">
+                    <!-- Telemedicine Quick Connect -->
+                    <section class="section-card" id="telemedicine"
+                        style="background: linear-gradient(135deg, #DBEAFE 0%, #FFFFFF 100%);">
+                        <div class="section-header">
+                            <div class="section-icon">📞</div>
+                            <h2 class="section-title">Telemedicine - Talk to a Doctor</h2>
+                        </div>
+                        <p style="margin-bottom: var(--space-4); color: var(--gray-600);">
+                            Connect with verified healthcare professionals from the safety of your home.
+                        </p>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3);">
+                            <button class="btn btn-primary btn-block">
+                                🎥 Video Consultation
+                            </button>
+                            <button class="btn btn-success btn-block">
+                                📞 Voice Call
+                            </button>
+                            <button class="btn btn-outline btn-block">
+                                💬 Chat with Doctor
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Nearby Healthcare -->
+                    <section class="section-card">
+                        <div class="section-header">
+                            <div class="section-icon">📍</div>
+                            <h2 class="section-title">Nearby Healthcare Facilities</h2>
+                        </div>
+
+                        <!-- Search Filter -->
+                        <div class="form-group">
+                            <select class="form-select" id="facilityType">
+                                <option value="all">All Facilities</option>
+                                <option value="hospital">Hospitals</option>
+                                <option value="clinic">Clinics</option>
+                                <option value="testing">Testing Centers</option>
+                                <option value="pharmacy">Pharmacies</option>
+                            </select>
+                        </div>
+
+                        <!-- Map Placeholder -->
+                        <div
+                            style="background: var(--gray-100); border-radius: var(--radius-lg); height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4);">
+                            <div style="text-align: center; color: var(--gray-500);">
+                                <span style="font-size: 3rem;">🗺️</span>
+                                <p>Interactive Map View</p>
+                                <button class="btn btn-sm btn-primary" style="margin-top: var(--space-2);">Enable
+                                    Location</button>
+                            </div>
+                        </div>
+
+                        <!-- Facility List -->
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #DBEAFE;">🏥</div>
+                            <div class="list-content">
+                                <div class="list-title">City General Hospital</div>
+                                <div class="list-subtitle">2.3 km away • Open 24/7</div>
+                            </div>
+                            <span class="badge badge-success">Available</span>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #D1FAE5;">🧪</div>
+                            <div class="list-content">
+                                <div class="list-title">COVID Testing Center - Central</div>
+                                <div class="list-subtitle">1.8 km away • 8 AM - 8 PM</div>
+                            </div>
+                            <span class="badge badge-warning">Busy</span>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #FEF3C7;">💊</div>
+                            <div class="list-content">
+                                <div class="list-title">MedPlus Pharmacy</div>
+                                <div class="list-subtitle">0.5 km away • Open until 10 PM</div>
+                            </div>
+                            <span class="badge badge-success">Open</span>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #E9D5FF;">🩺</div>
+                            <div class="list-content">
+                                <div class="list-title">Community Health Clinic</div>
+                                <div class="list-subtitle">3.1 km away • 9 AM - 6 PM</div>
+                            </div>
+                            <span class="badge badge-info">Appointment Only</span>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Tab: Symptom Checker -->
+                <div class="tab-content" id="tab-symptoms">
+                    <section class="section-card" id="symptom-checker">
+                        <div class="section-header">
+                            <div class="section-icon" style="background: linear-gradient(135deg, #FCA5A5, #EF4444);">🩺
+                            </div>
+                            <h2 class="section-title">Symptom Checker</h2>
+                        </div>
+                        <p style="margin-bottom: var(--space-4); color: var(--gray-600);">
+                            Answer a few questions to assess your risk level. This is not a medical diagnosis.
+                        </p>
+
+                        <!-- Symptom Questions -->
+                        <div id="symptomQuestions">
+                            <div class="question-card" data-question="1">
+                                <div class="question-number">Question 1 of 5</div>
+                                <div class="question-text">Do you have a fever (temperature above 100.4°F / 38°C)?</div>
+                                <div class="answer-options">
+                                    <label class="answer-option" onclick="selectAnswer(this, 'fever', 'yes')">
+                                        <span class="answer-radio"></span>
+                                        <span>Yes</span>
+                                    </label>
+                                    <label class="answer-option" onclick="selectAnswer(this, 'fever', 'no')">
+                                        <span class="answer-radio"></span>
+                                        <span>No</span>
+                                    </label>
+                                    <label class="answer-option" onclick="selectAnswer(this, 'fever', 'unsure')">
+                                        <span class="answer-radio"></span>
+                                        <span>Not sure</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question-card" data-question="2" style="display: none;">
+                                <div class="question-number">Question 2 of 5</div>
+                                <div class="question-text">Do you have a persistent cough?</div>
+                                <div class="answer-options">
+                                    <label class="answer-option" onclick="selectAnswer(this, 'cough', 'yes')">
+                                        <span class="answer-radio"></span>
+                                        <span>Yes, dry cough</span>
+                                    </label>
+                                    <label class="answer-option" onclick="selectAnswer(this, 'cough', 'wet')">
+                                        <span class="answer-radio"></span>
+                                        <span>Yes, with phlegm</span>
+                                    </label>
+                                    <label class="answer-option" onclick="selectAnswer(this, 'cough', 'no')">
+                                        <span class="answer-radio"></span>
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question-card" data-question="3" style="display: none;">
+                                <div class="question-number">Question 3 of 5</div>
+                                <div class="question-text">Have you experienced difficulty breathing or shortness of
+                                    breath?</div>
+                                <div class="answer-options">
+                                    <label class="answer-option" onclick="selectAnswer(this, 'breathing', 'yes')">
+                                        <span class="answer-radio"></span>
+                                        <span>Yes</span>
+                                    </label>
+                                    <label class="answer-option" onclick="selectAnswer(this, 'breathing', 'mild')">
+                                        <span class="answer-radio"></span>
+                                        <span>Mild discomfort</span>
+                                    </label>
+                                    <label class="answer-option" onclick="selectAnswer(this, 'breathing', 'no')">
+                                        <span class="answer-radio"></span>
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question-card" data-question="4" style="display: none;">
+                                <div class="question-number">Question 4 of 5</div>
+                                <div class="question-text">Have you lost your sense of taste or smell?</div>
+                                <div class="answer-options">
+                                    <label class="answer-option" onclick="selectAnswer(this, 'taste', 'yes')">
+                                        <span class="answer-radio"></span>
+                                        <span>Yes</span>
+                                    </label>
+                                    <label class="answer-option" onclick="selectAnswer(this, 'taste', 'partial')">
+                                        <span class="answer-radio"></span>
+                                        <span>Partially</span>
+                                    </label>
+                                    <label class="answer-option" onclick="selectAnswer(this, 'taste', 'no')">
+                                        <span class="answer-radio"></span>
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="question-card" data-question="5" style="display: none;">
+                                <div class="question-number">Question 5 of 5</div>
+                                <div class="question-text">Have you been in close contact with someone who tested
+                                    positive?</div>
+                                <div class="answer-options">
+                                    <label class="answer-option" onclick="selectAnswer(this, 'contact', 'yes')">
+                                        <span class="answer-radio"></span>
+                                        <span>Yes, within 14 days</span>
+                                    </label>
+                                    <label class="answer-option" onclick="selectAnswer(this, 'contact', 'maybe')">
+                                        <span class="answer-radio"></span>
+                                        <span>Possibly</span>
+                                    </label>
+                                    <label class="answer-option" onclick="selectAnswer(this, 'contact', 'no')">
+                                        <span class="answer-radio"></span>
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div style="display: flex; justify-content: space-between; margin-top: var(--space-4);">
+                            <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()"
+                                style="display: none;">← Previous</button>
+                            <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Next
+                                →</button>
+                        </div>
+
+                        <!-- Result (Hidden by default) -->
+                        <div id="symptomResult" style="display: none;">
+                            <div class="result-card" id="resultCard">
+                                <div class="result-icon" id="resultIcon">✓</div>
+                                <div class="result-level" id="resultLevel">Low Risk</div>
+                                <p class="result-message" id="resultMessage">
+                                    Based on your answers, your risk level appears to be low.
+                                </p>
+                                <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                                    <button class="btn btn-primary" onclick="resetSymptomChecker()">Check Again</button>
+                                    <button class="btn btn-outline" onclick="location.href='#telemedicine'">Consult a
+                                        Doctor Anyway</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Tab: Vaccination -->
+                <div class="tab-content" id="tab-vaccination">
+                    <section class="section-card" id="vaccination">
+                        <div class="section-header">
+                            <div class="section-icon" style="background: linear-gradient(135deg, #86EFAC, #22C55E);">💉
+                            </div>
+                            <h2 class="section-title">Vaccination Scheduler</h2>
+                        </div>
+
+                        <!-- Vaccination Status -->
+                        <div class="alert alert-success" style="margin-bottom: var(--space-4);">
+                            <span>✅</span>
+                            <div>
+                                <strong>Your Vaccination Status:</strong> Fully vaccinated (2 doses + booster)
+                            </div>
+                        </div>
+
+                        <!-- Schedule Appointment -->
+                        <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">Book an Appointment
+                        </h3>
+
+                        <div class="form-group">
+                            <label class="form-label">Select Vaccine Type</label>
+                            <select class="form-select">
+                                <option>Select vaccine...</option>
+                                <option>COVID-19 Booster</option>
+                                <option>Flu Vaccine</option>
+                                <option>Other Vaccination</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Preferred Date</label>
+                            <input type="date" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Preferred Center</label>
+                            <select class="form-select">
+                                <option>Select center...</option>
+                                <option>City General Hospital - 2.3 km</option>
+                                <option>Community Health Center - 3.1 km</option>
+                                <option>PHC Main Branch - 4.5 km</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-success btn-block btn-lg">
+                            📅 Book Appointment
+                        </button>
+
+                        <!-- Upcoming Appointments -->
+                        <h3 style="font-size: var(--font-size-lg); margin: var(--space-6) 0 var(--space-4);">Your
+                            Appointments</h3>
+
+                        <div class="list-item" style="border-left: 4px solid var(--primary-green);">
+                            <div class="list-icon" style="background: #D1FAE5;">💉</div>
+                            <div class="list-content">
+                                <div class="list-title">COVID-19 Booster Dose</div>
+                                <div class="list-subtitle">Feb 15, 2026 • 10:00 AM • City General Hospital</div>
+                            </div>
+                            <span class="badge badge-success">Confirmed</span>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Tab: Health Tracker -->
+                <div class="tab-content" id="tab-tracker">
+                    <section class="section-card">
+                        <div class="section-header">
+                            <div class="section-icon">📋</div>
+                            <h2 class="section-title">Daily Health Log</h2>
+                        </div>
+                        <p style="margin-bottom: var(--space-4); color: var(--gray-600);">
+                            Track your daily health metrics to monitor your well-being.
+                        </p>
+
+                        <form id="healthLogForm">
+                            <div class="form-group">
+                                <label class="form-label">Date</label>
+                                <input type="date" class="form-input" id="logDate">
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4);">
+                                <div class="form-group">
+                                    <label class="form-label">Temperature (°F)</label>
+                                    <input type="number" class="form-input" placeholder="98.6" step="0.1">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Oxygen Level (%)</label>
+                                    <input type="number" class="form-input" placeholder="98" min="0" max="100">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Symptoms Today</label>
+                                <div style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+                                    <label class="form-check" style="flex: 0 0 auto;">
+                                        <input type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Fever</span>
+                                    </label>
+                                    <label class="form-check" style="flex: 0 0 auto;">
+                                        <input type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Cough</span>
+                                    </label>
+                                    <label class="form-check" style="flex: 0 0 auto;">
+                                        <input type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Fatigue</span>
+                                    </label>
+                                    <label class="form-check" style="flex: 0 0 auto;">
+                                        <input type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Headache</span>
+                                    </label>
+                                    <label class="form-check" style="flex: 0 0 auto;">
+                                        <input type="checkbox" class="form-check-input">
+                                        <span class="form-check-label">Body ache</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Notes</label>
+                                <textarea class="form-textarea"
+                                    placeholder="Any additional notes about your health today..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">
+                                💾 Save Today's Log
+                            </button>
+                        </form>
+
+                        <!-- Log History -->
+                        <h3 style="font-size: var(--font-size-lg); margin: var(--space-6) 0 var(--space-4);">Recent Logs
+                        </h3>
+
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #D1FAE5;">✓</div>
+                            <div class="list-content">
+                                <div class="list-title">Feb 5, 2026</div>
+                                <div class="list-subtitle">Temp: 98.4°F • O2: 98% • No symptoms</div>
+                            </div>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #FEF3C7;">⚠️</div>
+                            <div class="list-content">
+                                <div class="list-title">Feb 4, 2026</div>
+                                <div class="list-subtitle">Temp: 99.1°F • O2: 97% • Mild headache</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link"><span
+                            class="nav-icon">🏠</span><span>Home</span></a></li>
+                <li class="nav-item"><a href="healthcare.html" class="nav-link active"><span
+                            class="nav-icon">🏥</span><span>Health</span></a></li>
+                <li class="nav-item"><a href="mental-health.html" class="nav-link"><span
+                            class="nav-icon">🧠</span><span>Mind</span></a></li>
+                <li class="nav-item"><a href="info-hub.html" class="nav-link"><span
+                            class="nav-icon">📊</span><span>Info</span></a></li>
+                <li class="nav-item"><a href="community.html" class="nav-link"><span
+                            class="nav-icon">🤝</span><span>Community</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Set today's date for health log
+        document.getElementById('logDate').valueAsDate = new Date();
+    </script>
+</body>
+
+</html>

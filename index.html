@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PANACEA - Pandemic Assistance, Navigation, Awareness, Community & Emergency Aid. Your complete pandemic response toolkit.">
+  <title>PANACEA - Pandemic Response Toolkit</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+</head>
+<body>
+  <div class="page-wrapper" id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="container header-content">
+        <div class="logo">
+          <div class="logo-icon">🛡️</div>
+          <div class="logo-text">
+            <h1>PANACEA</h1>
+            <p>Stay informed. Stay connected.</p>
+          </div>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="header-nav">
+          <a href="index.html" class="header-nav-link active">Home</a>
+          <a href="healthcare.html" class="header-nav-link">Healthcare</a>
+          <a href="mental-health.html" class="header-nav-link">Mental Health</a>
+          <a href="info-hub.html" class="header-nav-link">Info Hub</a>
+          <a href="community.html" class="header-nav-link">Community</a>
+        </nav>
+        
+        <div class="header-actions">
+          <button class="header-btn" onclick="toggleFontSize()" aria-label="Increase font size">
+            <span>A+</span>
+          </button>
+          <button class="header-btn" onclick="toggleHighContrast()" aria-label="Toggle high contrast">
+            <span>👁️</span>
+          </button>
+          <button class="header-btn" onclick="toggleLanguageModal()" aria-label="Change language">
+            <span>🌐</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+          <div class="page-title">
+            <h2>Welcome to PANACEA</h2>
+            <p>Your complete pandemic response companion. Access healthcare, mental support, verified information, and connect with your community.</p>
+          </div>
+        </section>
+
+        <!-- Quick Alert Banner -->
+        <div class="alert alert-info animate-fadeIn" id="alertBanner">
+          <span>📢</span>
+          <div>
+            <strong>Latest Update:</strong> New vaccination centers opened in your area. 
+            <a href="healthcare.html#vaccination">Book your slot →</a>
+          </div>
+        </div>
+
+        <!-- Feature Cards Grid -->
+        <section class="feature-grid">
+          <!-- Healthcare Card -->
+          <a href="healthcare.html" class="feature-card healthcare animate-fadeIn">
+            <div class="feature-icon">🏥</div>
+            <h3 class="feature-title">Healthcare</h3>
+            <p class="feature-desc">Find hospitals, telemedicine, symptom checker & vaccination</p>
+          </a>
+
+          <!-- Mental Health Card -->
+          <a href="mental-health.html" class="feature-card mental-health animate-fadeIn">
+            <div class="feature-icon">🧠</div>
+            <h3 class="feature-title">Mental Health</h3>
+            <p class="feature-desc">Meditation, mood tracking & professional support</p>
+          </a>
+
+          <!-- Information Hub Card -->
+          <a href="info-hub.html" class="feature-card info-hub animate-fadeIn">
+            <div class="feature-icon">📊</div>
+            <h3 class="feature-title">Information Hub</h3>
+            <p class="feature-desc">Real-time updates, myth busters & verified news</p>
+          </a>
+
+          <!-- Community Card -->
+          <a href="community.html" class="feature-card community animate-fadeIn">
+            <div class="feature-icon">🤝</div>
+            <h3 class="feature-title">Community</h3>
+            <p class="feature-desc">Help exchange, volunteer & neighborhood support</p>
+          </a>
+        </section>
+
+        <!-- Quick Stats Section -->
+        <section class="section-card" style="margin-top: var(--space-6);">
+          <div class="section-header">
+            <div class="section-icon">📈</div>
+            <h2 class="section-title">Your Region at a Glance</h2>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value" style="color: var(--success);">↓ 12%</div>
+              <div class="stat-label">Active Cases (7-day)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" style="color: var(--primary-blue);">78%</div>
+              <div class="stat-label">Vaccination Rate</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" style="color: var(--primary-green);">42</div>
+              <div class="stat-label">Testing Centers</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" style="color: #8B5CF6;">156</div>
+              <div class="stat-label">Community Helpers</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="section-card">
+          <div class="section-header">
+            <div class="section-icon">⚡</div>
+            <h2 class="section-title">Quick Actions</h2>
+          </div>
+          
+          <div class="list-item" onclick="location.href='healthcare.html#symptom-checker'">
+            <div class="list-icon" style="background: #FEE2E2;">🩺</div>
+            <div class="list-content">
+              <div class="list-title">Check Your Symptoms</div>
+              <div class="list-subtitle">Quick assessment for peace of mind</div>
+            </div>
+            <span class="list-action">→</span>
+          </div>
+          
+          <div class="list-item" onclick="location.href='healthcare.html#telemedicine'">
+            <div class="list-icon" style="background: #DBEAFE;">📞</div>
+            <div class="list-content">
+              <div class="list-title">Talk to a Doctor</div>
+              <div class="list-subtitle">Connect via telemedicine now</div>
+            </div>
+            <span class="list-action">→</span>
+          </div>
+          
+          <div class="list-item" onclick="location.href='mental-health.html#meditation'">
+            <div class="list-icon" style="background: #D1FAE5;">🧘</div>
+            <div class="list-content">
+              <div class="list-title">Feeling Anxious?</div>
+              <div class="list-subtitle">Try a 5-minute breathing exercise</div>
+            </div>
+            <span class="list-action">→</span>
+          </div>
+          
+          <div class="list-item" onclick="location.href='community.html#help'">
+            <div class="list-icon" style="background: #E9D5FF;">🙋</div>
+            <div class="list-content">
+              <div class="list-title">Need Help?</div>
+              <div class="list-subtitle">Post a request to your community</div>
+            </div>
+            <span class="list-action">→</span>
+          </div>
+        </section>
+
+        <!-- Emergency Numbers -->
+        <section class="section-card" style="background: linear-gradient(135deg, #FEE2E2 0%, #FFFFFF 100%);">
+          <div class="section-header">
+            <div class="section-icon" style="background: linear-gradient(135deg, #EF4444, #DC2626);">🚨</div>
+            <h2 class="section-title">Emergency Contacts</h2>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4);">
+            <a href="tel:112" class="btn btn-danger btn-block">
+              📞 Emergency: 112
+            </a>
+            <a href="tel:108" class="btn btn-danger btn-block">
+              🚑 Ambulance: 108
+            </a>
+            <a href="tel:104" class="btn btn-outline btn-block" style="border-color: var(--danger); color: var(--danger);">
+              ℹ️ Health Helpline: 104
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="healthcare.html" class="nav-link">
+            <span class="nav-icon">🏥</span>
+            <span>Health</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="mental-health.html" class="nav-link">
+            <span class="nav-icon">🧠</span>
+            <span>Mind</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="info-hub.html" class="nav-link">
+            <span class="nav-icon">📊</span>
+            <span>Info</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="community.html" class="nav-link">
+            <span class="nav-icon">🤝</span>
+            <span>Community</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Language Modal -->
+    <div class="modal-overlay" id="languageModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h3 class="modal-title">🌐 Select Language</h3>
+          <button class="modal-close" onclick="toggleLanguageModal()">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-check">
+              <input type="radio" name="language" value="en" checked class="form-check-input">
+              <span class="form-check-label">English</span>
+            </label>
+            <label class="form-check">
+              <input type="radio" name="language" value="hi" class="form-check-input">
+              <span class="form-check-label">हिंदी (Hindi)</span>
+            </label>
+            <label class="form-check">
+              <input type="radio" name="language" value="ta" class="form-check-input">
+              <span class="form-check-label">தமிழ் (Tamil)</span>
+            </label>
+            <label class="form-check">
+              <input type="radio" name="language" value="te" class="form-check-input">
+              <span class="form-check-label">తెలుగు (Telugu)</span>
+            </label>
+            <label class="form-check">
+              <input type="radio" name="language" value="bn" class="form-check-input">
+              <span class="form-check-label">বাংলা (Bengali)</span>
+            </label>
+            <label class="form-check">
+              <input type="radio" name="language" value="mr" class="form-check-input">
+              <span class="form-check-label">मराठी (Marathi)</span>
+            </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="toggleLanguageModal()">Cancel</button>
+          <button class="btn btn-primary" onclick="saveLanguage()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

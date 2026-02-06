@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="PANACEA Information Hub - Real-time pandemic updates, verified information, myth busters, and local advisories.">
+    <title>Information Hub - PANACEA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+</head>
+
+<body>
+    <div class="page-wrapper" id="app">
+        <!-- Header -->
+        <header class="header" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);">
+            <div class="container header-content">
+                <div class="logo">
+                    <div class="logo-icon">🛡️</div>
+                    <div class="logo-text">
+                        <h1>PANACEA</h1>
+                        <p>Information Hub</p>
+                    </div>
+                </div>
+
+                <nav class="header-nav">
+                    <a href="index.html" class="header-nav-link">Home</a>
+                    <a href="healthcare.html" class="header-nav-link">Healthcare</a>
+                    <a href="mental-health.html" class="header-nav-link">Mental Health</a>
+                    <a href="info-hub.html" class="header-nav-link active">Info Hub</a>
+                    <a href="community.html" class="header-nav-link">Community</a>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="header-btn" onclick="toggleFontSize()"><span>A+</span></button>
+                    <button class="header-btn" onclick="toggleHighContrast()"><span>👁️</span></button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <a href="index.html" class="back-link">← Back to Home</a>
+
+                <div class="page-title">
+                    <h2>📊 Information Hub</h2>
+                    <p>Stay informed with verified updates, safety guidelines, and accurate information.</p>
+                </div>
+
+                <!-- Real-time Stats -->
+                <section class="section-card">
+                    <div class="section-header">
+                        <div class="section-icon" style="background: linear-gradient(135deg, #FCD34D, #F59E0B);">📈
+                        </div>
+                        <h2 class="section-title">Real-Time Statistics</h2>
+                    </div>
+
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+                        <span style="color: var(--gray-500); font-size: var(--font-size-sm);">
+                            Last updated: <span id="lastUpdate">10 minutes ago</span>
+                        </span>
+                        <button class="btn btn-sm btn-secondary" onclick="refreshStats()">🔄 Refresh</button>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card" style="border-left: 4px solid var(--danger);">
+                            <div class="stat-value" style="color: var(--danger);">1,234</div>
+                            <div class="stat-label">Active Cases</div>
+                        </div>
+                        <div class="stat-card" style="border-left: 4px solid var(--success);">
+                            <div class="stat-value" style="color: var(--success);">45,678</div>
+                            <div class="stat-label">Recovered</div>
+                        </div>
+                        <div class="stat-card" style="border-left: 4px solid var(--primary-blue);">
+                            <div class="stat-value" style="color: var(--primary-blue);">78%</div>
+                            <div class="stat-label">Vaccinated</div>
+                        </div>
+                        <div class="stat-card" style="border-left: 4px solid var(--warning);">
+                            <div class="stat-value" style="color: var(--warning);">↓ 12%</div>
+                            <div class="stat-label">7-Day Trend</div>
+                        </div>
+                    </div>
+
+                    <!-- Trend Chart Placeholder -->
+                    <div
+                        style="background: var(--gray-50); border-radius: var(--radius-lg); height: 200px; margin-top: var(--space-4); display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: var(--gray-500);">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-2);">📉</div>
+                            <p>Case Trend (Last 30 Days)</p>
+                            <p style="font-size: var(--font-size-sm);">Cases declining steadily</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Localized Alerts -->
+                <section class="section-card" style="background: linear-gradient(135deg, #FEF3C7 0%, #FFFFFF 100%);">
+                    <div class="section-header">
+                        <div class="section-icon" style="background: linear-gradient(135deg, #FCD34D, #F59E0B);">🔔
+                        </div>
+                        <h2 class="section-title">Local Alerts & Advisories</h2>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <span>⚠️</span>
+                        <div>
+                            <strong>Advisory:</strong> Masks recommended in crowded indoor spaces.
+                            <br><span style="font-size: var(--font-size-sm); opacity: 0.8;">Effective from Feb 1,
+                                2026</span>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <span>📢</span>
+                        <div>
+                            <strong>New Testing Center:</strong> Central Park location now operational.
+                            <br><span style="font-size: var(--font-size-sm); opacity: 0.8;">Posted 2 hours ago</span>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-success">
+                        <span>✅</span>
+                        <div>
+                            <strong>Good News:</strong> Positivity rate below 5% for 2 consecutive weeks.
+                            <br><span style="font-size: var(--font-size-sm); opacity: 0.8;">Posted yesterday</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Safety Guidelines -->
+                <section class="section-card">
+                    <div class="section-header">
+                        <div class="section-icon"
+                            style="background: linear-gradient(135deg, var(--primary-green-light), var(--primary-green));">
+                            ✅</div>
+                        <h2 class="section-title">Safety Guidelines</h2>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="list-icon" style="background: #D1FAE5;">🧼</div>
+                        <div class="list-content">
+                            <div class="list-title">Wash Hands Frequently</div>
+                            <div class="list-subtitle">Use soap and water for at least 20 seconds</div>
+                        </div>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="list-icon" style="background: #DBEAFE;">😷</div>
+                        <div class="list-content">
+                            <div class="list-title">Wear a Mask</div>
+                            <div class="list-subtitle">In crowded or indoor public spaces</div>
+                        </div>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="list-icon" style="background: #FEF3C7;">↔️</div>
+                        <div class="list-content">
+                            <div class="list-title">Maintain Distance</div>
+                            <div class="list-subtitle">Keep 6 feet apart when possible</div>
+                        </div>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="list-icon" style="background: #E9D5FF;">💉</div>
+                        <div class="list-content">
+                            <div class="list-title">Get Vaccinated</div>
+                            <div class="list-subtitle">Stay up to date with recommended vaccines</div>
+                        </div>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="list-icon" style="background: #FEE2E2;">🏠</div>
+                        <div class="list-content">
+                            <div class="list-title">Stay Home if Sick</div>
+                            <div class="list-subtitle">Isolate and get tested if you have symptoms</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Myth vs Fact -->
+                <section class="section-card">
+                    <div class="section-header">
+                        <div class="section-icon" style="background: linear-gradient(135deg, #FDA4AF, #E11D48);">🔍
+                        </div>
+                        <h2 class="section-title">Myth vs Fact</h2>
+                    </div>
+                    <p style="color: var(--gray-600); margin-bottom: var(--space-4);">
+                        Don't fall for misinformation. Here are the facts:
+                    </p>
+
+                    <!-- Myth 1 -->
+                    <div
+                        style="background: var(--gray-50); border-radius: var(--radius-lg); padding: var(--space-4); margin-bottom: var(--space-3);">
+                        <div style="display: flex; gap: var(--space-3); margin-bottom: var(--space-3);">
+                            <span class="badge badge-danger">MYTH</span>
+                            <p style="font-weight: 600; color: var(--gray-800);">"Vaccines contain microchips"</p>
+                        </div>
+                        <div style="display: flex; gap: var(--space-3);">
+                            <span class="badge badge-success">FACT</span>
+                            <p style="color: var(--gray-600);">Vaccines contain only mRNA, lipids, salts, and sugars.
+                                They do not contain any tracking devices or microchips.</p>
+                        </div>
+                    </div>
+
+                    <!-- Myth 2 -->
+                    <div
+                        style="background: var(--gray-50); border-radius: var(--radius-lg); padding: var(--space-4); margin-bottom: var(--space-3);">
+                        <div style="display: flex; gap: var(--space-3); margin-bottom: var(--space-3);">
+                            <span class="badge badge-danger">MYTH</span>
+                            <p style="font-weight: 600; color: var(--gray-800);">"Young people don't get seriously ill"
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: var(--space-3);">
+                            <span class="badge badge-success">FACT</span>
+                            <p style="color: var(--gray-600);">While older adults face higher risks, young people can
+                                also get severely ill and experience long-term complications.</p>
+                        </div>
+                    </div>
+
+                    <!-- Myth 3 -->
+                    <div
+                        style="background: var(--gray-50); border-radius: var(--radius-lg); padding: var(--space-4); margin-bottom: var(--space-3);">
+                        <div style="display: flex; gap: var(--space-3); margin-bottom: var(--space-3);">
+                            <span class="badge badge-danger">MYTH</span>
+                            <p style="font-weight: 600; color: var(--gray-800);">"Natural immunity is better than
+                                vaccines"</p>
+                        </div>
+                        <div style="display: flex; gap: var(--space-3);">
+                            <span class="badge badge-success">FACT</span>
+                            <p style="color: var(--gray-600);">Vaccine immunity is safer and more predictable. Natural
+                                infection carries risks of severe illness, death, and long-term effects.</p>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline btn-block" style="margin-top: var(--space-4);">View More Facts
+                        →</button>
+                </section>
+
+                <!-- Verified Sources -->
+                <section class="section-card">
+                    <div class="section-header">
+                        <div class="section-icon"
+                            style="background: linear-gradient(135deg, var(--primary-blue-light), var(--primary-blue));">
+                            🏛️</div>
+                        <h2 class="section-title">Verified Sources</h2>
+                    </div>
+                    <p style="color: var(--gray-600); margin-bottom: var(--space-4);">
+                        Get information only from trusted, official sources:
+                    </p>
+
+                    <div class="list-item" onclick="window.open('https://www.who.int', '_blank')">
+                        <div class="list-icon" style="background: #DBEAFE;">🌐</div>
+                        <div class="list-content">
+                            <div class="list-title">World Health Organization (WHO)</div>
+                            <div class="list-subtitle">who.int</div>
+                        </div>
+                        <span class="badge badge-info">Official</span>
+                    </div>
+
+                    <div class="list-item" onclick="window.open('https://www.cdc.gov', '_blank')">
+                        <div class="list-icon" style="background: #D1FAE5;">🏥</div>
+                        <div class="list-content">
+                            <div class="list-title">Centers for Disease Control (CDC)</div>
+                            <div class="list-subtitle">cdc.gov</div>
+                        </div>
+                        <span class="badge badge-info">Official</span>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="list-icon" style="background: #FEF3C7;">🇮🇳</div>
+                        <div class="list-content">
+                            <div class="list-title">Ministry of Health & Family Welfare</div>
+                            <div class="list-subtitle">mohfw.gov.in</div>
+                        </div>
+                        <span class="badge badge-info">Official</span>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="list-icon" style="background: #E9D5FF;">📱</div>
+                        <div class="list-content">
+                            <div class="list-title">Aarogya Setu App</div>
+                            <div class="list-subtitle">Official contact tracing & updates</div>
+                        </div>
+                        <span class="badge badge-info">Official</span>
+                    </div>
+                </section>
+
+                <!-- Notification Settings -->
+                <section class="section-card">
+                    <div class="section-header">
+                        <div class="section-icon">⚙️</div>
+                        <h2 class="section-title">Notification Preferences</h2>
+                    </div>
+
+                    <label class="form-check">
+                        <input type="checkbox" class="form-check-input" checked>
+                        <span class="form-check-label">
+                            <strong>Emergency Alerts</strong><br>
+                            <span style="color: var(--gray-500); font-size: var(--font-size-sm);">Critical updates and
+                                lockdown notices</span>
+                        </span>
+                    </label>
+
+                    <label class="form-check">
+                        <input type="checkbox" class="form-check-input" checked>
+                        <span class="form-check-label">
+                            <strong>Local Advisories</strong><br>
+                            <span style="color: var(--gray-500); font-size: var(--font-size-sm);">Region-specific
+                                guidelines and updates</span>
+                        </span>
+                    </label>
+
+                    <label class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <span class="form-check-label">
+                            <strong>Daily Stats Summary</strong><br>
+                            <span style="color: var(--gray-500); font-size: var(--font-size-sm);">Daily report of cases
+                                and trends</span>
+                        </span>
+                    </label>
+
+                    <label class="form-check">
+                        <input type="checkbox" class="form-check-input" checked>
+                        <span class="form-check-label">
+                            <strong>Vaccination Reminders</strong><br>
+                            <span style="color: var(--gray-500); font-size: var(--font-size-sm);">Reminders for upcoming
+                                doses</span>
+                        </span>
+                    </label>
+
+                    <button class="btn btn-primary" style="margin-top: var(--space-4);">Save Preferences</button>
+                </section>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link"><span
+                            class="nav-icon">🏠</span><span>Home</span></a></li>
+                <li class="nav-item"><a href="healthcare.html" class="nav-link"><span
+                            class="nav-icon">🏥</span><span>Health</span></a></li>
+                <li class="nav-item"><a href="mental-health.html" class="nav-link"><span
+                            class="nav-icon">🧠</span><span>Mind</span></a></li>
+                <li class="nav-item"><a href="info-hub.html" class="nav-link active"><span
+                            class="nav-icon">📊</span><span>Info</span></a></li>
+                <li class="nav-item"><a href="community.html" class="nav-link"><span
+                            class="nav-icon">🤝</span><span>Community</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

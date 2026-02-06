@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="PANACEA Community - Help exchange board, volunteer coordination, neighborhood groups, and community support.">
+    <title>Community Connection - PANACEA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+</head>
+
+<body>
+    <div class="page-wrapper" id="app">
+        <!-- Header -->
+        <header class="header" style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);">
+            <div class="container header-content">
+                <div class="logo">
+                    <div class="logo-icon">🛡️</div>
+                    <div class="logo-text">
+                        <h1>PANACEA</h1>
+                        <p>Community Connection</p>
+                    </div>
+                </div>
+
+                <nav class="header-nav">
+                    <a href="index.html" class="header-nav-link">Home</a>
+                    <a href="healthcare.html" class="header-nav-link">Healthcare</a>
+                    <a href="mental-health.html" class="header-nav-link">Mental Health</a>
+                    <a href="info-hub.html" class="header-nav-link">Info Hub</a>
+                    <a href="community.html" class="header-nav-link active">Community</a>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="header-btn" onclick="toggleFontSize()"><span>A+</span></button>
+                    <button class="header-btn" onclick="toggleHighContrast()"><span>👁️</span></button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <a href="index.html" class="back-link">← Back to Home</a>
+
+                <div class="page-title">
+                    <h2>🤝 Community Connection</h2>
+                    <p>We're stronger together. Request help, offer support, and connect with your neighbors.</p>
+                </div>
+
+                <!-- Quick Actions -->
+                <div
+                    style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-3); margin-bottom: var(--space-6);">
+                    <button class="btn btn-primary btn-lg" onclick="showPostModal('request')"
+                        style="flex-direction: column; padding: var(--space-4);">
+                        <span style="font-size: 1.5rem;">🙋</span>
+                        Request Help
+                    </button>
+                    <button class="btn btn-success btn-lg" onclick="showPostModal('offer')"
+                        style="flex-direction: column; padding: var(--space-4);">
+                        <span style="font-size: 1.5rem;">🤲</span>
+                        Offer Help
+                    </button>
+                </div>
+
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchCommunityTab('board')">📋 Help Board</button>
+                    <button class="tab-btn" onclick="switchCommunityTab('groups')">👥 Groups</button>
+                    <button class="tab-btn" onclick="switchCommunityTab('volunteer')">💪 Volunteer</button>
+                </div>
+
+                <!-- Tab: Help Exchange Board -->
+                <div class="community-tab-content active" id="tab-board">
+                    <section class="section-card" id="help">
+                        <div class="section-header">
+                            <div class="section-icon" style="background: linear-gradient(135deg, #C4B5FD, #8B5CF6);">📋
+                            </div>
+                            <h2 class="section-title">Help Exchange Board</h2>
+                        </div>
+
+                        <!-- Filter -->
+                        <div
+                            style="display: flex; gap: var(--space-3); margin-bottom: var(--space-4); flex-wrap: wrap;">
+                            <button class="btn btn-sm btn-primary">All</button>
+                            <button class="btn btn-sm btn-secondary">🛒 Groceries</button>
+                            <button class="btn btn-sm btn-secondary">💊 Medicine</button>
+                            <button class="btn btn-sm btn-secondary">🚗 Transport</button>
+                            <button class="btn btn-sm btn-secondary">📦 Other</button>
+                        </div>
+
+                        <!-- Help Cards -->
+                        <div class="help-card request">
+                            <div class="help-header">
+                                <span class="help-type">🙋 Help Needed</span>
+                                <span class="badge badge-warning">Urgent</span>
+                            </div>
+                            <div class="help-title">Need groceries - elderly person</div>
+                            <div class="help-desc">My 78-year-old mother lives alone and needs weekly groceries. She
+                                cannot go out due to health conditions. Looking for someone to help with grocery
+                                shopping.</div>
+                            <div class="help-meta">
+                                <span>📍 2.1 km away</span>
+                                <span>⏰ Posted 1 hour ago</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm" style="margin-top: var(--space-3);">I Can
+                                Help</button>
+                        </div>
+
+                        <div class="help-card offer">
+                            <div class="help-header">
+                                <span class="help-type">🤲 Offering Help</span>
+                                <span class="badge badge-success">Available</span>
+                            </div>
+                            <div class="help-title">Free medicine delivery in Central area</div>
+                            <div class="help-desc">I'm a volunteer and can pick up medicines from pharmacies and deliver
+                                to anyone in need within 5km of Central Park. Just send me the prescription.</div>
+                            <div class="help-meta">
+                                <span>📍 Central Area</span>
+                                <span>⏰ Posted 3 hours ago</span>
+                            </div>
+                            <button class="btn btn-success btn-sm" style="margin-top: var(--space-3);">Contact</button>
+                        </div>
+
+                        <div class="help-card request">
+                            <div class="help-header">
+                                <span class="help-type">🙋 Help Needed</span>
+                            </div>
+                            <div class="help-title">Need ride to vaccination center</div>
+                            <div class="help-desc">I need a ride to the City General Hospital for my booster shot on Feb
+                                10th, morning. Happy to cover fuel costs.</div>
+                            <div class="help-meta">
+                                <span>📍 3.5 km away</span>
+                                <span>⏰ Posted 5 hours ago</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm" style="margin-top: var(--space-3);">I Can
+                                Help</button>
+                        </div>
+
+                        <div class="help-card offer">
+                            <div class="help-header">
+                                <span class="help-type">🤲 Offering Help</span>
+                                <span class="badge badge-success">Available</span>
+                            </div>
+                            <div class="help-title">Tech support for seniors</div>
+                            <div class="help-desc">I can help elderly folks with video calling setup, vaccine
+                                appointment booking, and basic phone/computer issues. Virtual or in-person (vaccinated).
+                            </div>
+                            <div class="help-meta">
+                                <span>📍 Anywhere (Virtual)</span>
+                                <span>⏰ Posted yesterday</span>
+                            </div>
+                            <button class="btn btn-success btn-sm" style="margin-top: var(--space-3);">Contact</button>
+                        </div>
+
+                        <button class="btn btn-outline btn-block" style="margin-top: var(--space-4);">Load More
+                            →</button>
+                    </section>
+                </div>
+
+                <!-- Tab: Neighborhood Groups -->
+                <div class="community-tab-content" id="tab-groups" style="display: none;">
+                    <section class="section-card">
+                        <div class="section-header">
+                            <div class="section-icon" style="background: linear-gradient(135deg, #86EFAC, #22C55E);">👥
+                            </div>
+                            <h2 class="section-title">Neighborhood Groups</h2>
+                        </div>
+                        <p style="color: var(--gray-600); margin-bottom: var(--space-4);">
+                            Connect with people in your area for local updates and support.
+                        </p>
+
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #D1FAE5;">🏘️</div>
+                            <div class="list-content">
+                                <div class="list-title">Central District Community</div>
+                                <div class="list-subtitle">234 members • Active now</div>
+                            </div>
+                            <button class="btn btn-sm btn-success">Joined</button>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #DBEAFE;">🏢</div>
+                            <div class="list-content">
+                                <div class="list-title">Tech Park Residents</div>
+                                <div class="list-subtitle">156 members • Last active 2h ago</div>
+                            </div>
+                            <button class="btn btn-sm btn-outline">Join</button>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #FEF3C7;">🏫</div>
+                            <div class="list-content">
+                                <div class="list-title">School Zone Parents Network</div>
+                                <div class="list-subtitle">89 members • Last active 30m ago</div>
+                            </div>
+                            <button class="btn btn-sm btn-outline">Join</button>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #E9D5FF;">🌳</div>
+                            <div class="list-content">
+                                <div class="list-title">Green Valley Neighborhood</div>
+                                <div class="list-subtitle">312 members • Active now</div>
+                            </div>
+                            <button class="btn btn-sm btn-outline">Join</button>
+                        </div>
+
+                        <!-- Group Chat Preview -->
+                        <div style="margin-top: var(--space-6);">
+                            <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">💬 Recent in
+                                Central District</h3>
+
+                            <div
+                                style="background: var(--gray-50); border-radius: var(--radius-lg); padding: var(--space-4);">
+                                <div style="display: flex; gap: var(--space-3); margin-bottom: var(--space-3);">
+                                    <div
+                                        style="width: 36px; height: 36px; background: var(--primary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 600;">
+                                        R</div>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: var(--font-size-sm);">Rahul S.</div>
+                                        <div style="color: var(--gray-600);">Does anyone know if the pharmacy on Main St
+                                            has Paracetamol in stock?</div>
+                                        <div
+                                            style="font-size: var(--font-size-xs); color: var(--gray-400); margin-top: var(--space-1);">
+                                            10 min ago</div>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; gap: var(--space-3);">
+                                    <div
+                                        style="width: 36px; height: 36px; background: var(--primary-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 600;">
+                                        P</div>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: var(--font-size-sm);">Priya M.</div>
+                                        <div style="color: var(--gray-600);">Yes! I just went there. They have good
+                                            stock. 👍</div>
+                                        <div
+                                            style="font-size: var(--font-size-xs); color: var(--gray-400); margin-top: var(--space-1);">
+                                            5 min ago</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary btn-block" style="margin-top: var(--space-4);">Open Group
+                                Chat</button>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Tab: Volunteer Coordination -->
+                <div class="community-tab-content" id="tab-volunteer" style="display: none;">
+                    <section class="section-card">
+                        <div class="section-header">
+                            <div class="section-icon" style="background: linear-gradient(135deg, #FDA4AF, #E11D48);">💪
+                            </div>
+                            <h2 class="section-title">Become a Volunteer</h2>
+                        </div>
+
+                        <p style="color: var(--gray-600); margin-bottom: var(--space-4);">
+                            Join our network of community helpers and make a difference.
+                        </p>
+
+                        <!-- Volunteer Stats -->
+                        <div class="stats-grid" style="margin-bottom: var(--space-6);">
+                            <div class="stat-card">
+                                <div class="stat-value" style="color: #8B5CF6;">156</div>
+                                <div class="stat-label">Active Volunteers</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" style="color: var(--success);">843</div>
+                                <div class="stat-label">People Helped</div>
+                            </div>
+                        </div>
+
+                        <!-- Volunteer Opportunities -->
+                        <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">Open Opportunities
+                        </h3>
+
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #D1FAE5;">🚗</div>
+                            <div class="list-content">
+                                <div class="list-title">Transportation Volunteer</div>
+                                <div class="list-subtitle">Drive people to medical appointments</div>
+                            </div>
+                            <span class="badge badge-warning">12 needed</span>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #DBEAFE;">📞</div>
+                            <div class="list-content">
+                                <div class="list-title">Wellness Check Caller</div>
+                                <div class="list-subtitle">Call and check on isolated seniors</div>
+                            </div>
+                            <span class="badge badge-warning">8 needed</span>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #FEF3C7;">🛒</div>
+                            <div class="list-content">
+                                <div class="list-title">Grocery Delivery Helper</div>
+                                <div class="list-subtitle">Shop and deliver essentials</div>
+                            </div>
+                            <span class="badge badge-warning">15 needed</span>
+                        </div>
+
+                        <div class="list-item">
+                            <div class="list-icon" style="background: #E9D5FF;">💻</div>
+                            <div class="list-content">
+                                <div class="list-title">Tech Support Volunteer</div>
+                                <div class="list-subtitle">Help with digital literacy</div>
+                            </div>
+                            <span class="badge badge-success">5 needed</span>
+                        </div>
+
+                        <button class="btn btn-primary btn-block btn-lg" style="margin-top: var(--space-6);">
+                            ✋ Register as Volunteer
+                        </button>
+                    </section>
+
+                    <!-- Safety Report -->
+                    <section class="section-card"
+                        style="background: linear-gradient(135deg, #FEE2E2 0%, #FFFFFF 100%);">
+                        <div class="section-header">
+                            <div class="section-icon" style="background: linear-gradient(135deg, #FCA5A5, #EF4444);">🚨
+                            </div>
+                            <h2 class="section-title">Safety Reporting</h2>
+                        </div>
+                        <p style="color: var(--gray-600); margin-bottom: var(--space-4);">
+                            Report safety concerns, misinformation, or emergencies in your area.
+                        </p>
+
+                        <div class="form-group">
+                            <label class="form-label">Report Type</label>
+                            <select class="form-select">
+                                <option>Select type...</option>
+                                <option>🚨 Emergency</option>
+                                <option>📰 Misinformation</option>
+                                <option>⚠️ Safety Concern</option>
+                                <option>🏥 Healthcare Access Issue</option>
+                                <option>📦 Supply Shortage</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-textarea" placeholder="Describe the situation..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Location (Optional)</label>
+                            <input type="text" class="form-input" placeholder="Area or landmark">
+                        </div>
+
+                        <label class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <span class="form-check-label">Submit anonymously</span>
+                        </label>
+
+                        <button class="btn btn-danger btn-block" style="margin-top: var(--space-4);">
+                            🚨 Submit Report
+                        </button>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link"><span
+                            class="nav-icon">🏠</span><span>Home</span></a></li>
+                <li class="nav-item"><a href="healthcare.html" class="nav-link"><span
+                            class="nav-icon">🏥</span><span>Health</span></a></li>
+                <li class="nav-item"><a href="mental-health.html" class="nav-link"><span
+                            class="nav-icon">🧠</span><span>Mind</span></a></li>
+                <li class="nav-item"><a href="info-hub.html" class="nav-link"><span
+                            class="nav-icon">📊</span><span>Info</span></a></li>
+                <li class="nav-item"><a href="community.html" class="nav-link active"><span
+                            class="nav-icon">🤝</span><span>Community</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Post Help Modal -->
+        <div class="modal-overlay" id="postModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="postModalTitle">Post Request</h3>
+                    <button class="modal-close" onclick="closePostModal()">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="form-label">Category</label>
+                        <select class="form-select">
+                            <option>🛒 Groceries</option>
+                            <option>💊 Medicine</option>
+                            <option>🚗 Transportation</option>
+                            <option>💻 Tech Support</option>
+                            <option>📦 Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Title</label>
+                        <input type="text" class="form-input" placeholder="Brief description of your need">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Details</label>
+                        <textarea class="form-textarea" placeholder="Provide more details..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Your Area</label>
+                        <input type="text" class="form-input" placeholder="Neighborhood or landmark">
+                    </div>
+
+                    <label class="form-check">
+                        <input type="checkbox" class="form-check-input" id="urgentCheck">
+                        <span class="form-check-label">This is urgent</span>
+                    </label>
+
+                    <label class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <span class="form-check-label">Post anonymously</span>
+                    </label>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="closePostModal()">Cancel</button>
+                    <button class="btn btn-primary" onclick="submitPost()">Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Community tab switching
+        function switchCommunityTab(tabId) {
+            document.querySelectorAll('.community-tab-content').forEach(c => c.style.display = 'none');
+            document.querySelectorAll('.tabs .tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('tab-' + tabId).style.display = 'block';
+            event.target.classList.add('active');
+        }
+
+        function showPostModal(type) {
+            document.getElementById('postModalTitle').textContent = type === 'request' ? '🙋 Request Help' : '🤲 Offer Help';
+            document.getElementById('postModal').classList.add('active');
+        }
+
+        function closePostModal() {
+            document.getElementById('postModal').classList.remove('active');
+        }
+
+        function submitPost() {
+            alert('Your post has been submitted! It will appear on the board shortly.');
+            closePostModal();
+        }
+    </script>
+</body>
+
+</html>
